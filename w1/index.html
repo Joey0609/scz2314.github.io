@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>毕业生分布</title>
+                <script type="text/javascript" src="js/echarts.min.js"></script>
+            <script type="text/javascript" src="js/china.js"></script>
+
+</head>
+<body >
+    <div id="09306805cfda43e2897ba3e484c6857e" class="chart-container" style="width:1920px; height:1080px; "></div>
+    <script>
+        var chart_09306805cfda43e2897ba3e484c6857e = echarts.init(
+            document.getElementById('09306805cfda43e2897ba3e484c6857e'), 'white', {renderer: 'canvas'});
+        var option_09306805cfda43e2897ba3e484c6857e = {
+    "backgroundColor": "#FFFFFF",
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "color": [
+        "#000000",
+        "#5470c6",
+        "#91cc75",
+        "#fac858",
+        "#ee6666",
+        "#73c0de",
+        "#3ba272",
+        "#fc8452",
+        "#9a60b4",
+        "#ea7ccc"
+    ],
+    "series": [
+        {
+            "type": "scatter",
+            "coordinateSystem": "geo",
+            "symbol": "pin",
+            "symbolSize": 20,
+            "data": [
+                {
+                    "name": "\u6768\u6d4e\u6e90",
+                    "value": [
+                        "116.326582",
+                        "40.002436",
+                        100
+                    ]
+                },
+                {
+                    "name": "\u6768\u7b11\u6db5",
+                    "value": [
+                        "117.255582",
+                        "31.838229",
+                        100
+                    ]
+                },
+                {
+                    "name": "\u5434\u4f18\u4f18",
+                    "value": [
+                        "114.215568",
+                        "22.684234",
+                        100
+                    ]
+                },
+                {
+                    "name": "\u6c90\u77e5\u5468",
+                    "value": [
+                        "125.280441",
+                        "43.827437",
+                        100
+                    ]
+                },
+                {
+                    "name": "\u4fde\u8d8a",
+                    "value": [
+                        "116.326582",
+                        "40.002436",
+                        100
+                    ]
+                },
+                {
+                    "name": "\u5f90\u4e50\u5929",
+                    "value": [
+                        "119.967167",
+                        "31.777087",
+                        100
+                    ]
+                },
+                {
+                    "name": "\u595a\u94ed\u6d69",
+                    "value": [
+                        "113.999607",
+                        "22.597729",
+                        100
+                    ]
+                },
+                {
+                    "name": "\u738b\u4e88\u7487",
+                    "value": [
+                        "106.467730",
+                        "29.561465",
+                        100
+                    ]
+                },
+                {
+                    "name": "\u82cf\u8d1d\u8d1d",
+                    "value": [
+                        "118.961365",
+                        "32.110012",
+                        100
+                    ]
+                },
+                {
+                    "name": "\u9ec4\u6d60\u884d",
+                    "value": [
+                        "126.632884",
+                        "45.743721",
+                        100
+                    ]
+                }
+            ],
+            "label": {
+                "show": true,
+                "color": "#B22222",
+                "margin": 8,
+                "fontSize": 15,
+                "formatter": "{b}"
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                ""
+            ],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderWidth": 1,
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "formatter": function (params) {        return params.name + ' : ' + params.value[2];    },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "title": [
+        {
+            "show": true,
+            "target": "blank",
+            "subtarget": "blank",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ],
+    "visualMap": {
+        "show": false,
+        "type": "continuous",
+        "min": 0,
+        "max": 100,
+        "inRange": {
+            "color": [
+                "#FFFFF",
+                "#B22222"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "hoverLink": true,
+        "orient": "vertical",
+        "padding": 5,
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    },
+    "geo": {
+        "map": "china",
+        "roam": true,
+        "aspectScale": 0.75,
+        "nameProperty": "name",
+        "selectedMode": false,
+        "itemStyle": {
+            "color": "#FFFFFF",
+            "borderColor": "#D3D3D3"
+        },
+        "emphasis": {}
+    }
+};
+        chart_09306805cfda43e2897ba3e484c6857e.setOption(option_09306805cfda43e2897ba3e484c6857e);
+    </script>
+</body>
+</html>

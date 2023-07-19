@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中国地图飞线</title>
+    <style>
+      #china {
+        width: 1370px;
+        height: 600px;
+      }
+    </style>
+</head>
+
+<body>
+  <div id="china"></div>
+</body>
+<script src="js/echarts.min.js"></script>
+<script src="js/china.js"></script>
+<script type="text/javascript">
+    var chinaGeoCoordMap = {
+      '杨济源': [116.326582,40.002436],
+'杨笑涵': [117.255582,31.838229],
+'吴优优': [114.215568,22.684234],
+'沐知周': [125.280441,43.827437],
+'俞越': [116.326582,40.002436],
+'奚铭浩': [113.999607,22.597729],
+'王予璇': [106.467730,29.561465],
+'苏贝贝': [118.961365,32.110012],
+'黄浠衍': [126.632884,45.743721]
+    };
+    var chinaDatas = [
+      [{ name: '杨济源', value: 0 }],
+      [{ name: '杨笑涵', value: 0 }],
+      [{ name: '吴优优', value: 0 }],
+      [{ name: '沐知周', value: 0 }],
+      [{ name: '俞越', value: 0 }],
+      [{ name: '奚铭浩', value: 0 }],
+      [{ name: '王予璇', value: 0 }],
+      [{ name: '苏贝贝', value: 0 }],
+      [{ name: '黄浠衍', value: 0 }],
+    ];
+    var convertData = function(data) {
+      var res = [];
+      for(var i = 0; i < data.length; i++) {
+        var dataItem = data[i];
+        // 飞线图的起点
+        var fromCoord =  [119.967167,31.777087]; // 飞线图的目标点
+        var toCoord =chinaGeoCoordMap[dataItem[0].name];
+        if (fromCoord && toCoord) {
+          res.push([{
+            coord: fromCoord,
+            value: dataItem[0].value
+          }, 
+          {
+            coord: toCoord,
+          }]);
+        }
+      }
+      return res;
+    };
+    var series = [];
+    [['北京市', chinaDatas]].forEach(function(item, i) {
+      console.log('---item----', item[1]);
+      series.push({
+        type: 'lines',
+        zlevel: 2,
+        effect: {
+          show: true,
+          period: 6, //箭头指向速度，值越小速度越快
+          trailLength: 0.01, //特效尾迹长度[0,1]值越大，尾迹越长重
+          symbol: "arrow",
+          color: "#FFFFFF",
+          symbolSize: 8, //图标大小
+        },
+        lineStyle: {
+          normal: {
+            width: 1, //尾迹线条宽度
+            opacity: 1, //尾迹线条透明度
+            curveness: .3 //尾迹线条曲直度
+          }
+        },
+        data: convertData(item[1])
+      });
+    });
+    var option = {
+      tooltip: {
+        trigger: 'item',
+        backgroundColor: 'rgba(166, 200, 76, 0.82)',
+        borderColor: '#FFFFCC',
+        showDelay: 0,
+        hideDelay: 0,
+        enterable: true,
+        transitionDuration: 0,
+        extraCssText: 'z-index:100',
+        formatter: function(params, ticket, callback) {
+          //根据业务自己拓展要显示的内容
+          var res = "";
+          var name = params.name;
+          var value = params.value[params.seriesIndex + 1];
+          res = "<span style='color:#fff;'>" + name + "</span><br/>数据：" + value;
+          return res;
+        }
+      },
+      backgroundColor:"#013954", // 地图背景
+      geo: {
+        map: 'china',
+        zoom: 1.2,
+        label: {
+          emphasis: {
+            show: false
+          }
+        },
+        roam: true, //是否允许缩放
+        itemStyle: {
+          normal: {
+            color: 'rgba(51, 69, 89, .5)', //地图背景色
+            borderColor: '#516a89', //省市边界线00fcff 516a89
+            borderWidth: 1
+          },
+          emphasis: {
+            color: 'rgba(37, 43, 61, .5)' //悬浮背景
+          }
+        }
+      },
+      series: series
+    };
+    let china = echarts.init(document.getElementById('china'));
+    china.setOption(option);
+</script>
+</html>
