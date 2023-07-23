@@ -9,8 +9,33 @@
 <p><a href="/scz2314.github.io/w1/FriendDistribution-china.html">定点图</a> </p>
 <p><a href="/scz2314.github.io/w2/china_lines.html">飞线图</a> </p>
 <p>蹭饭图正在制作中，请稍后...</p>
-<p>（持续更新）完成进度70% 上次更新：7/23 14:27</p>
+<p>Version One将于18：00发布</p>
 <p>上面那俩玩意就看看好了根本你也看不出来啥</p>
-<p>第一个网页加载慢，耐心等待</p>
+<p>网页加载慢，耐心等待</p>
+<p id="demo"></p>
+<script>
+// 设置截止时间
+var countDownDate = new Date("July 23, 2023 18:00:00").getTime();
+// 每秒钟更新一次倒计时
+var x = setInterval(function() {
+// 获取当前时间
+var now = new Date().getTime();
+// 计算剩余时间
+var distance = countDownDate - now;
+// 计算天、时、分、秒
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+// 输出倒计时
+document.getElementById("demo").innerHTML = days + "天 " + hours + "时 "
++ minutes + "分 " + seconds + "秒 ";
+// 判断倒计时是否结束
+if (distance < 0) {
+clearInterval(x);
+document.getElementById("demo").innerHTML = "倒计时结束！";
+}
+}, 1000);
+</script>
 </body><div id="qk-ext-root" class="wSsllC9wCXlJ1wygj1YQ"></div></html>
 
